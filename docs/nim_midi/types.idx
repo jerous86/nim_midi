@@ -1,0 +1,52 @@
+Ticks	nim_midi/types.html#Ticks	types: Ticks	
+TimeSignature	nim_midi/types.html#TimeSignature	types: TimeSignature	
+Major	nim_midi/types.html#Major	Scale.Major	
+Minor	nim_midi/types.html#Minor	Scale.Minor	
+Scale	nim_midi/types.html#Scale	types: Scale	
+KeySignature	nim_midi/types.html#KeySignature	types: KeySignature	
+hasSharps	nim_midi/types.html#hasSharps,KeySignature	types: hasSharps(ks: KeySignature): bool	
+hasFlats	nim_midi/types.html#hasFlats,KeySignature	types: hasFlats(ks: KeySignature): bool	
+keySigName	nim_midi/types.html#keySigName,KeySignature	types: keySigName(ks: KeySignature): string	
+Note	nim_midi/types.html#Note	types: Note	
+transpose	nim_midi/types.html#transpose,Note,int	types: transpose(n: Note; t: int): Note	
+toOctave0	nim_midi/types.html#toOctave0,Note	types: toOctave0(n: Note): Note	
+octave	nim_midi/types.html#octave,Note	types: octave(n: Note): uint8	
+noteName	nim_midi/types.html#noteName,Note,KeySignature,bool	types: noteName(n: Note; ks: KeySignature = defaultKeySignature; withOctave: bool = true): string	
+midiNameToNote	nim_midi/types.html#midiNameToNote,string	types: midiNameToNote(n: string): Note	
+Channel	nim_midi/types.html#Channel	types: Channel	
+Port	nim_midi/types.html#Port	types: Port	
+NoteOff	nim_midi/types.html#NoteOff	MidiStatus.NoteOff	
+NoteOn	nim_midi/types.html#NoteOn	MidiStatus.NoteOn	
+NoteAfterTouch	nim_midi/types.html#NoteAfterTouch	MidiStatus.NoteAfterTouch	
+CtrlChange	nim_midi/types.html#CtrlChange	MidiStatus.CtrlChange	
+PgmChange	nim_midi/types.html#PgmChange	MidiStatus.PgmChange	
+ChannelAfterTouch	nim_midi/types.html#ChannelAfterTouch	MidiStatus.ChannelAfterTouch	
+PitchBend	nim_midi/types.html#PitchBend	MidiStatus.PitchBend	
+MidiStatus	nim_midi/types.html#MidiStatus	types: MidiStatus	
+MetaEvent	nim_midi/types.html#MetaEvent	types: MetaEvent	
+SingleTrack	nim_midi/types.html#SingleTrack	Format.SingleTrack	
+MultipleTracks	nim_midi/types.html#MultipleTracks	Format.MultipleTracks	
+MultipleSongs	nim_midi/types.html#MultipleSongs	Format.MultipleSongs	
+Format	nim_midi/types.html#Format	types: Format	
+MThdChunk	nim_midi/types.html#MThdChunk	types: MThdChunk	
+EventType	nim_midi/types.html#EventType	types: EventType	
+Event	nim_midi/types.html#Event	types: Event	
+MTrkChunk	nim_midi/types.html#MTrkChunk	types: MTrkChunk	
+MidiFile	nim_midi/types.html#MidiFile	types: MidiFile	
+`==`	nim_midi/types.html#==,Event,Event	types: `==`(l, r: Event): bool	
+isTimeSignature	nim_midi/types.html#isTimeSignature,Event	types: isTimeSignature(e: Event): bool	
+getTimeSignature	nim_midi/types.html#getTimeSignature,Event	types: getTimeSignature(e: Event): TimeSignature	
+isKeySignature	nim_midi/types.html#isKeySignature,Event	types: isKeySignature(e: Event): bool	
+getKeySignature	nim_midi/types.html#getKeySignature,Event	types: getKeySignature(e: Event): KeySignature	
+toString	nim_midi/types.html#toString,seq[uint8]	types: toString(s: seq[uint8]): string	
+toHexString	nim_midi/types.html#toHexString,seq[uint8]	types: toHexString(s: seq[uint8]): string	
+toUint32	nim_midi/types.html#toUint32,seq[uint8]	types: toUint32(s: seq[uint8]): uint32	
+toUint16	nim_midi/types.html#toUint16,seq[uint8]	types: toUint16(s: seq[uint8]): uint16	
+isTempo	nim_midi/types.html#isTempo,Event	types: isTempo(e: Event): bool	
+getTempo	nim_midi/types.html#getTempo,Event	types: getTempo(e: Event): uint32	
+getBPM	nim_midi/types.html#getBPM,Event	types: getBPM(e: Event): uint	
+toString	nim_midi/types.html#toString,MThdChunk	types: toString(h: MThdChunk): string	
+toString	nim_midi/types.html#toString,Event	types: toString(e: Event): string	
+toString	nim_midi/types.html#toString,MTrkChunk	types: toString(t: MTrkChunk): string	
+toString	nim_midi/types.html#toString,MidiFile	types: toString(m: MidiFile): string	
+calculateDuration	nim_midi/types.html#calculateDuration,MidiFile	types: calculateDuration(m: MidiFile): float	

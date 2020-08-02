@@ -1,0 +1,2 @@
+parseMidiFile	nim_midi/reader.html#parseMidiFile,Stream	reader: parseMidiFile(s: var Stream): MidiFile	
+parseMidiFile	nim_midi/reader.html#parseMidiFile,string	reader: parseMidiFile(f: string): MidiFile	

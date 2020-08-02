@@ -1,0 +1,2 @@
+writeMidiFile	nim_midi/writer.html#writeMidiFile,Stream,MidiFile	writer: writeMidiFile(s: var Stream; m: MidiFile)	
+writeMidiFile	nim_midi/writer.html#writeMidiFile,string,MidiFile	writer: writeMidiFile(f: string; m: MidiFile)	
