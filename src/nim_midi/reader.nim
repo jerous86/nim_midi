@@ -119,6 +119,12 @@ proc parseMidiFile*(s:var Stream): MidiFile =
 
 proc parseMidiFile*(f:string): MidiFile =
   ## Opens file `f` as a stream which is passed to parseMidiFile
-  var s:Stream=newFileStream(f)
-  s.parseMidiFile
+  try:
+      var s:Stream=openFileStream(f)
+      assert s!=nil
+      result=s.parseMidiFile
+      s.close()
+  except:
+    stderr.write getCurrentExceptionMsg()
+    quit(1)
 
