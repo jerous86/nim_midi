@@ -45,9 +45,10 @@ when isMainModule:
         case cmd
         # Stack manipulation
         of "r","read": 
-            while i<args.len and peekArg().fileExists:
-                stack.add popArg().parseMidiFile
-        of "concatall": # concatall -- merges all tracks of all entries on the stack into one file by concatenation
+            while i<args.len and (peekArg().fileExists or "*" in peekArg() or "?" in peekArg()):
+                for file in popArg().walkPattern:
+                    stack.add file.parseMidiFile
+        of "concatall": # merges all tracks of all entries on the stack into one file by concatenation
             var mf:MidiFile
             mf.header=stack[0].header
             for m in stack:
@@ -82,7 +83,9 @@ when isMainModule:
                     echo &"\t\t{t}: {m.tracks[t].events.len} events"
         
         of "write": # write FILENAME -- write the top of the stack to FIILENAME
-            popArg().writeMidiFile(stack[0])
+            let file_out=popArg()
+            echo "Writing to ",file_out
+            file_out.writeMidiFile(stack[0])
             
         of "help": 
             help()
