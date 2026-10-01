@@ -38,7 +38,7 @@ proc writeHeader(s:var Stream, m:MThdChunk) =
 
 proc writeEvent(s:var Stream, e:Event, prevEvent:Event) = 
   func getStatusChannel(e:Event): uint8 = 
-    if e.etype==EventType.MidiEvent: uint8(e.mi_channel)^4+uint8(e.mi_status)
+    if e.etype==EventType.MidiEvent: uint8(e.mi_channel)+uint8(e.mi_status)
     else: 0
 
   # Disabled this assert, as we should not be using absolute times.
